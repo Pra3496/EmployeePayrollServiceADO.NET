@@ -176,6 +176,39 @@ namespace PayrollServiceADO
 
         }
 
+        public void DeleteDatafromDatabase(string EmployeeName)
+        {
+
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            try
+            {
+                using (sqlConnection)
+                {
+                    sqlConnection.Open();
+                    SqlCommand sqlCommand = new SqlCommand("spDeleteDataOfDataBase", sqlConnection);
+                    sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    sqlCommand.Parameters.AddWithValue("@EmployeeName", EmployeeName);
+                    int result = sqlCommand.ExecuteNonQuery();
+                    sqlConnection.Close();
+
+                    if (result >= 1)
+                    {
+                        Console.WriteLine("\n\t{0} is Deleted Succesfuly\n", EmployeeName);
+                    }
+                    else { Console.WriteLine("\n\tNot Deleted...!\n"); }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Connection Not Ready");
+            }
+
+
+        }
+
+
 	
 
        

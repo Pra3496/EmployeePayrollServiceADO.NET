@@ -36,8 +36,8 @@
                 Console.WriteLine("1 : ADDING Data to employeePayrollService");
                 Console.WriteLine("2 : DISPLAY Data From employeePayrollService");
                 Console.WriteLine("3 : UPDATE Data From employeePayrollService");
-                Console.WriteLine("4 : DISPLAY SELECTED Data From employeePayrollService");
-                Console.WriteLine("5 : DELETE SELECTED Data From employeePayrollService");
+		Console.WriteLine("4 : DELETE SELECTED Data From employeePayrollService");
+                Console.WriteLine("5 : DISPLAY SELECTED Data From employeePayrollService");
                 Console.WriteLine("0 : EXIT\n");
                 Console.Write("Enter option : ");
                 int opt = Convert.ToInt32(Console.ReadLine());
@@ -66,6 +66,15 @@
                         Console.Write("Press any key..."); 
                         Console.ReadKey();
                         break;
+		     case 4:
+                        Console.WriteLine("\n---------{ DELETE Data From employeePayrollService }---------\n");
+                        Console.Write("\nEnter the Name : ");
+                        name = Convert.ToString(Console.ReadLine());
+                        employeePayrollService.DeleteDatafromDatabase(name);
+                        Console.Write("Press any key...");
+                        Console.ReadKey();
+                        break;
+
                 
                   
 
