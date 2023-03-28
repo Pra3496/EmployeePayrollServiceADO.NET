@@ -56,6 +56,16 @@
                         Console.Write("Press any key...");
                         Console.ReadKey();
                         break;
+		     case 3:
+                        Console.WriteLine("\n---------{ UPDATE Data From AddressBook }---------\n");
+                        Console.Write("\nEnter the Name : ");
+                        string EmployeeName = Convert.ToString(Console.ReadLine());
+                        Console.Write("\nEnter the Department(Replace by) : ");
+                        string Department = Convert.ToString(Console.ReadLine());
+                        employeePayrollService.UpdateDatafromDatabase(EmployeeName, Department);
+                        Console.Write("Press any key..."); 
+                        Console.ReadKey();
+                        break;
                 
                   
 

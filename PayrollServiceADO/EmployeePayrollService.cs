@@ -135,6 +135,47 @@ namespace PayrollServiceADO
             }
         }
 
+        public void UpdateDatafromDatabase(string EmployeeName, string Department)
+        {
+
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            PayrollServiceModel payrollServiceModel = new PayrollServiceModel();
+            payrollServiceModel.EmployeeName = EmployeeName;
+            payrollServiceModel.Department = Department;
+            try
+            {
+                using (sqlConnection)
+                {
+                    sqlConnection.Open();
+                    SqlCommand sqlCommand = new SqlCommand("spUpdateDataOfDataBase", sqlConnection);
+                    sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    sqlCommand.Parameters.AddWithValue("@EmployeeName",payrollServiceModel.EmployeeName);
+                    sqlCommand.Parameters.AddWithValue("@Department",payrollServiceModel.Department);
+                    int result = sqlCommand.ExecuteNonQuery();
+                    
+
+                    if (result >= 1)
+                    {
+                        Console.WriteLine("\n\tNew Contact Updated Succesfuly\n");
+                    }
+                    else { Console.WriteLine("\n\tNot Updated...!\n"); }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+
+
+        }
+
 	
 
        
