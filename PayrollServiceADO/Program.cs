@@ -56,33 +56,8 @@
                         Console.Write("Press any key...");
                         Console.ReadKey();
                         break;
-                    case 3:
-                        Console.WriteLine("\n---------{ UPDATE Data From AddressBook }---------\n");
-                        Console.Write("\nEnter the Name : ");
-                        string EmployeeName = Convert.ToString(Console.ReadLine());
-                        Console.Write("\nEnter the Department(Replace by) : ");
-                        string Department = Convert.ToString(Console.ReadLine());
-                        employeePayrollService.UpdateDatafromDatabase(EmployeeName, Department);
-                        Console.Write("Press any key..."); 
-                        Console.ReadKey();
-                        break;
-                    case 4:
-                        Console.WriteLine("\n---------{ DISPLAY SELECTED Data From employeePayrollService }---------");
-                        Console.Write("\nEnter the Name : ");
-                        name = Convert.ToString(Console.ReadLine());
-                        employeePayrollService.GetSelectedDataFromDataBase(name);
-                        Console.Write("Press any key...");
-                        Console.ReadKey();
-                        break;
-                    case 5:
-                        Console.WriteLine("\n---------{ DELETE Data From employeePayrollService }---------\n");
-                        Console.Write("\nEnter the Name : ");
-                        name = Convert.ToString(Console.ReadLine());
-                        employeePayrollService.DeleteDatafromDatabase(name);
-                        Console.Write("Press any key...");
-                        Console.ReadKey();
-                        break;
-
+                
+                  
 
                     case 0:
                         flag = false;
